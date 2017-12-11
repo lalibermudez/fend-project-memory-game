@@ -1,6 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
+
 let cards = [
 	"fa fa-anchor",
 	"fa fa-anchor",
@@ -27,6 +28,8 @@ let cards = [
  *   - add each card's HTML to the page
  */
 
+$(".restart").click(shuffle(cards));
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -42,7 +45,12 @@ function shuffle(array) {
     return array;
 };
 
-$(".restart").click(shuffle());
+
+cards.forEach(function(card) {
+	$("li").each(function() {
+		$(this).children().addClass(card);
+	});
+});
 
 
 /*
