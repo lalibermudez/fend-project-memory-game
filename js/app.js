@@ -1,7 +1,24 @@
 /*
  * Create a list that holds all of your cards
  */
-
+let cards = [
+	"fa fa-anchor",
+	"fa fa-anchor",
+	"fa fa-bolt",
+	"fa fa-bolt",
+	"fa fa-cube",
+	"fa fa-cube",
+	"fa fa-leaf",
+	"fa fa-leaf",
+	"fa fa-bicycle",
+	"fa fa-bicycle",
+	"fa fa-diamond",
+	"fa fa-diamond",
+	"fa fa-bomb",
+	"fa fa-bomb",
+	"fa fa-paper-plane-o",
+	"fa fa-paper-plane-o",
+];
 
 /*
  * Display the cards on the page
@@ -23,7 +40,9 @@ function shuffle(array) {
     }
 
     return array;
-}
+};
+
+$(".restart").click(shuffle());
 
 
 /*
@@ -38,10 +57,21 @@ function shuffle(array) {
  */
 
 $(".card").click(
-	showCard();
-	list of oopen cards 
-	if cardsMatch();
-	else cardsDontMatch();
-	counter();
-	if all cards match finalScore();
+	showCard();,
+	openCard();
+
+	// list of oopen cards 
+	// if cardsMatch();
+	// else cardsDontMatch();
+	// counter();
+	// if all cards match finalScore();
 	);
+
+function showCard {
+	$(".card").addClass("show");
+};
+
+function openCard {
+	$(".card").addClass("open");
+};
+
