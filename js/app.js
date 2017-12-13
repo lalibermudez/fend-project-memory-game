@@ -46,9 +46,9 @@ function shuffle(array) {
 };
 
 
-cards.forEach(function(card) {
-	$("li").each(function() {
-		$(this).children().addClass(card);
+cards.forEach(function(card, index) {
+	$("li.card").each(function() {
+		$(this).children().addClass(cards[index]);
 	});
 });
 
@@ -64,22 +64,22 @@ cards.forEach(function(card) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-$(".card").click(
-	showCard();,
-	openCard();
+// $(".card").click(
+// 	showCard();,
+// 	openCard();
 
-	// list of oopen cards 
-	// if cardsMatch();
-	// else cardsDontMatch();
-	// counter();
-	// if all cards match finalScore();
-	);
+// 	// list of oopen cards 
+// 	// if cardsMatch();
+// 	// else cardsDontMatch();
+// 	// counter();
+// 	// if all cards match finalScore();
+// 	);
 
-function showCard {
-	$(".card").addClass("show");
-};
+// function showCard {
+// 	$(".card").addClass("show");
+// };
 
-function openCard {
-	$(".card").addClass("open");
-};
+// function openCard {
+// 	$(".card").addClass("open");
+// };
 
