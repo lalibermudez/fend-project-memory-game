@@ -28,7 +28,15 @@ let cards = [
  *   - add each card's HTML to the page
  */
 
-$(".restart").click(shuffle(cards));
+shuffle(cards);
+addClass(cards);
+
+
+$(".restart").click(function(){
+	shuffle(cards);
+	addClass(cards);
+
+});
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
