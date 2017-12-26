@@ -46,11 +46,10 @@ function shuffle(array) {
 };
 
 
-cards.forEach(function(card, index) {
-	$("li.card").each(function() {
-		$(this).children().addClass(cards[index]);
-	});
-});
+for (var i = 0; i <= 15; i++) {
+	$("li.card").eq(i).children().addClass(cards[i]);
+	console.log(cards[i]);
+};
 
 
 /*
