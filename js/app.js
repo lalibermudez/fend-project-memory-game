@@ -53,12 +53,13 @@ function shuffle(array) {
     return array;
 };
 
-
-for (var i = 0; i <= 15; i++) {
-	$("li.card").eq(i).children().addClass(cards[i]);
-	console.log(cards[i]);
+function addClass(array) {
+	$("li.card").children().removeClass();
+	for (var i = 0; i <= 15; i++) {
+		$("li.card").eq(i).children().addClass(array[i]);
+		console.log(array[i]);
+	};
 };
-
 
 /*
  * set up the event listener for a card. If a card is clicked:
