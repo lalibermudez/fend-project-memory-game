@@ -118,3 +118,9 @@ $("li.card").click(function() {
 function showCards(elem) {
 	elem.addClass("open show");
 };
+
+function openCards(elem) {
+	open.push(elem.children().attr("class"));
+	console.log(open);
+};
+
