@@ -35,7 +35,7 @@ addClass(cards);
 $(".restart").click(function(){
 	shuffle(cards);
 	addClass(cards);
-
+	// TODO: restart all counters to zero
 });
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -101,6 +101,7 @@ function cardsMatch(elem) {
 				//TODO: add movement style for when it matches
 			} else {
 				//TODO: add movement style for when it is wrong
+				//TODO: make cards linger for a while
 				$("li.card.open").removeClass("open show");
 			};
 			open.pop();
