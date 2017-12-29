@@ -91,3 +91,26 @@ function addClass(array) {
 // 	$(".card").addClass("open");
 // };
 
+let open = [];
+let match = 0;
+let show = 0;
+
+$("li.card").click(function() {
+	//TODO: add move counter++
+	showCards($(this));
+	openCards($(this));
+	cardsMatch();
+	// let value = $(this).children().attr("class");
+	// $(this).addClass("show open");
+	// show++
+	// open.push(value);
+	// if (open.length === 2) {
+	// 	if (open[0] === open[1]) {
+	// 		$(this).removeClass("open");
+	// 		$(this).addClass("match");
+	// 		match++
+	// 	} else {
+	// 		$(this).removeClass("show open");
+	// 	}
+	// }
+});
