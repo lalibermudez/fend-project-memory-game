@@ -124,3 +124,19 @@ function openCards(elem) {
 	console.log(open);
 };
 
+function cardsMatch(elem) {
+	if (open.length <= 2) {
+		if (open.length === 2) {
+			if (open[0] === open[1]) {
+				$("li.card.open").addClass("match").removeClass("open");
+				match++
+				//TODO: add movement style for when it matches
+			} else {
+				//TODO: add movement style for when it is wrong
+				$("li.card.open").removeClass("open show");
+			};
+			open.pop();
+			open.pop();
+		};
+	};
+};
