@@ -72,25 +72,6 @@ function addClass(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-// $(".card").click(
-// 	showCard();,
-// 	openCard();
-
-// 	// list of oopen cards 
-// 	// if cardsMatch();
-// 	// else cardsDontMatch();
-// 	// counter();
-// 	// if all cards match finalScore();
-// 	);
-
-// function showCard {
-// 	$(".card").addClass("show");
-// };
-
-// function openCard {
-// 	$(".card").addClass("open");
-// };
-
 let open = [];
 let match = 0;
 let show = 0;
@@ -100,19 +81,6 @@ $("li.card").click(function() {
 	showCards($(this));
 	openCards($(this));
 	cardsMatch();
-	// let value = $(this).children().attr("class");
-	// $(this).addClass("show open");
-	// show++
-	// open.push(value);
-	// if (open.length === 2) {
-	// 	if (open[0] === open[1]) {
-	// 		$(this).removeClass("open");
-	// 		$(this).addClass("match");
-	// 		match++
-	// 	} else {
-	// 		$(this).removeClass("show open");
-	// 	}
-	// }
 });
 
 function showCards(elem) {
