@@ -114,3 +114,7 @@ $("li.card").click(function() {
 	// 	}
 	// }
 });
+
+function showCards(elem) {
+	elem.addClass("open show");
+};
