@@ -103,8 +103,11 @@ function cardsMatch(elem) {
 			} else {
 				//TODO: add movement style for when it is wrong
 				//TODO: make cards linger for a while
-				$("li.card.open").effect("shake");
-				$("li.card.open").delay(1900).removeClass("open show");
+				$("li.card.open").effect("shake").css({"background": "#f44242"});
+				window.setTimeout(function() {
+					$("li.card.open").removeClass("open show");
+				}, 500);
+
 			};
 			open.pop();
 			open.pop();
