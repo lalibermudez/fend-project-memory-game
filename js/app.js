@@ -123,3 +123,14 @@ function counterUp() {
 		console.log(n);
 	};
 };
+
+function gameOver() {
+    $( ".winning-dialog" ).dialog({
+    	modal: true,
+    	buttons: {
+        	OK: function() {
+          	$(this).dialog("close");
+        	}
+      	}
+    });
+};
