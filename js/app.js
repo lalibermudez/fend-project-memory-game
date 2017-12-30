@@ -75,9 +75,9 @@ function addClass(array) {
 let open = [];
 let match = 0;
 let show = 0;
+let counter = 0;
 
 $("li.card").click(function() {
-	//TODO: add move counter++
 	showCards($(this));
 	openCards($(this));
 	cardsMatch();
@@ -99,18 +99,20 @@ function cardsMatch(elem) {
 				$("li.card.open").effect("shake");
 				$("li.card.open").addClass("match").removeClass("open");
 				match++
-				//TODO: add movement style for when it matches
 			} else {
-				//TODO: add movement style for when it is wrong
-				//TODO: make cards linger for a while
 				$("li.card.open").effect("shake").css({"background": "#f44242"});
 				window.setTimeout(function() {
 					$("li.card.open").removeClass("open show");
 				}, 500);
-
 			};
+			counterUp();
 			open.pop();
 			open.pop();
 		};
 	};
 };
+
+function counterUp() {
+	counter++
+	$(".moves").text(counter);
+}
