@@ -76,6 +76,7 @@ let open = [];
 let match = 0;
 let show = 0;
 let counter = 0;
+let n = 2;
 
 $("li.card").click(function() {
 	showCards($(this));
@@ -99,6 +100,7 @@ function cardsMatch(elem) {
 				$("li.card.open").effect("shake");
 				$("li.card.open").addClass("match").removeClass("open");
 				match++
+				console.log(match);
 			} else {
 				$("li.card.open").effect("shake").css({"background": "#f44242"});
 				window.setTimeout(function() {
@@ -115,4 +117,11 @@ function cardsMatch(elem) {
 function counterUp() {
 	counter++
 	$(".moves").text(counter);
-}
+	if (counter % 5 === 0) {
+		let modulo = counter % 5;
+		console.log(modulo);
+		$("ul.stars").children().eq(n).children().removeClass("fa-star").addClass("fa-star-o");
+		n--;
+		console.log(n);
+	};
+};
