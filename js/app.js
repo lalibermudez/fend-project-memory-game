@@ -32,10 +32,8 @@ shuffle(cards);
 addClass(cards);
 
 
-$(".restart").click(function(){
-	shuffle(cards);
-	addClass(cards);
-	// TODO: restart all counters to zero
+$(".restart").click(function() {
+	location.reload();
 });
 
 // Shuffle function from http://stackoverflow.com/a/2450976
