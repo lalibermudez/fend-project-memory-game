@@ -76,10 +76,14 @@ let show = 0;
 let counter = 0;
 let n = 2;
 
+
 $("li.card").click(function() {
 	showCards($(this));
 	openCards($(this));
 	cardsMatch();
+	if (match === 8) {
+		gameOver();
+	};
 });
 
 function showCards(elem) {
@@ -125,12 +129,20 @@ function counterUp() {
 };
 
 function gameOver() {
-    $( ".winning-dialog" ).dialog({
-    	modal: true,
-    	buttons: {
-        	OK: function() {
-          	$(this).dialog("close");
-        	}
-      	}
-    });
+	console.log("Game Over");
+	    $( ".ui-dialog" ).dialog({
+	    	// autoOpen: false;
+	    	modal: true,
+	    	buttons: [{
+	        	text: "OK",
+	        	icon: "ui-icon-check",
+	        	click: function() {
+	          	$(this).dialog("close");
+	        	}
+	      	}]
+	    });
+};
+
+if (match === 8) {
+	gameOver();
 };
