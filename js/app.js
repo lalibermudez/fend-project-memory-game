@@ -75,7 +75,7 @@ let match = 0;
 let show = 0;
 let counter = 0;
 let n = 2;
-
+let stars = 3;
 
 $("li.card").click(function() {
 	showCards($(this));
@@ -124,22 +124,28 @@ function counterUp() {
 		console.log(modulo);
 		$("ul.stars").children().eq(n).children().removeClass("fa-star").addClass("fa-star-o");
 		n--;
+		stars--;
+		if (stars > 0) {
+			stars = 0;
+		}
 		console.log(n);
 	};
 };
 
 function gameOver() {
 	console.log("Game Over");
-	    $( ".ui-dialog" ).dialog({
-	    	// autoOpen: false;
-	    	modal: true,
-	    	buttons: [{
-	        	text: "OK",
-	        	icon: "ui-icon-check",
-	        	click: function() {
-	          	$(this).dialog("close");
-	          	location.reload();
-	        	}
-	      	}]
-	    });
+	$(".dialog-text").text(function(){
+			return "CONGRATULATIONS!! You've won! With " + counter + " moves and " + stars + " stars.";
+	});
+    $( ".ui-dialog" ).dialog({
+    	modal: true,
+    	buttons: [{
+        	text: "OK",
+        	icon: "ui-icon-check",
+        	click: function() {
+          	$(this).dialog("close");
+          	location.reload();
+        	}
+      	}]
+    });
 };
