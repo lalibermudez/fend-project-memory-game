@@ -138,6 +138,7 @@ function gameOver() {
 	        	icon: "ui-icon-check",
 	        	click: function() {
 	          	$(this).dialog("close");
+	          	location.reload();
 	        	}
 	      	}]
 	    });
