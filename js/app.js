@@ -142,7 +142,3 @@ function gameOver() {
 	      	}]
 	    });
 };
-
-if (match === 8) {
-	gameOver();
-};
