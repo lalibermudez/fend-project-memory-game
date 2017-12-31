@@ -125,7 +125,7 @@ function counterUp() {
 		$("ul.stars").children().eq(n).children().removeClass("fa-star").addClass("fa-star-o");
 		n--;
 		stars--;
-		if (stars > 0) {
+		if (stars < 0) {
 			stars = 0;
 		}
 		console.log(n);
@@ -135,7 +135,11 @@ function counterUp() {
 function gameOver() {
 	console.log("Game Over");
 	$(".dialog-text").text(function(){
+		if (stars === 1) {
+			return "CONGRATULATIONS!! You've won! With " + counter + " moves and " + stars + " star.";
+		} else {
 			return "CONGRATULATIONS!! You've won! With " + counter + " moves and " + stars + " stars.";
+		};
 	});
     $( ".ui-dialog" ).dialog({
     	modal: true,
