@@ -125,8 +125,8 @@ function cardsMatch(elem) {
 function counterUp() {
 	counter++
 	$(".moves").text(counter);
-	if (counter % 5 === 0) {
-		let modulo = counter % 5;
+	if (counter % 8 === 0) {
+		let modulo = counter % 8;
 		console.log(modulo);
 		$("ul.stars").children().eq(n).children().removeClass("fa-star").addClass("fa-star-o");
 		n--;
