@@ -76,7 +76,7 @@ let show = 0;
 let counter = 0;
 let n = 2;
 let stars = 3;
-let sec = 0;
+let secs = 0;
 let minutes = 0;
 
 $("li.card").click(function() {
@@ -142,9 +142,9 @@ function gameOver() {
 	console.log("Game Over");
 	$(".dialog-text").text(function(){
 		if (stars === 1) {
-			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " star, and " + sec + " minutes.";
+			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " star, and " + minutes + ":" + secs + " minutes.";
 		} else {
-			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " stars, and " + sec + " minutes.";
+			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " stars, and " + minutes + ":" + secs + " minutes.";
 		};
 	});
     $( ".ui-dialog" ).dialog({
@@ -162,9 +162,13 @@ function gameOver() {
 
 function startTimer() {
 	let time = setInterval(function() {
-		sec++;
-		$(".timer").children().text(sec);
-		console.log(sec);
+		secs++;
+		if (secs >= 60) {
+			secs = 0;
+			minutes++;
+		}
+		$(".timer").children().text(minutes+":"+secs);
+		console.log(minutes + ":" + secs);
 		if (match === 8) {
 			clearInterval(time);
 		return time;
