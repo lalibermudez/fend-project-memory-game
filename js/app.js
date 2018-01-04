@@ -98,7 +98,6 @@ function showCards(elem) {
 
 function openCards(elem) {
 	open.push(elem.children().attr("class"));
-	console.log(open);
 };
 
 function cardsMatch(elem) {
@@ -108,7 +107,6 @@ function cardsMatch(elem) {
 				$("li.card.open").effect("shake");
 				$("li.card.open").addClass("match").removeClass("open");
 				match++
-				console.log(match);
 			} else {
 				$("li.card.open").effect("shake").css({"background": "#f44242"});
 				window.setTimeout(function() {
@@ -127,19 +125,16 @@ function counterUp() {
 	$(".moves").text(counter);
 	if (counter % 8 === 0) {
 		let modulo = counter % 8;
-		console.log(modulo);
 		$("ul.stars").children().eq(n).children().removeClass("fa-star").addClass("fa-star-o");
 		n--;
 		stars--;
 		if (stars < 0) {
 			stars = 0;
 		}
-		console.log(n);
 	};
 };
 
 function gameOver() {
-	console.log("Game Over");
 	$(".dialog-text").text(function(){
 		if (stars === 1) {
 			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " star, and " + minutes + ":" + secs + " minutes.";
@@ -168,7 +163,6 @@ function startTimer() {
 			minutes++;
 		}
 		$(".timer").children().text(minutes+":"+secs);
-		console.log(minutes + ":" + secs);
 		if (match === 8) {
 			clearInterval(time);
 		return time;
