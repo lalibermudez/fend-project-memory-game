@@ -51,6 +51,7 @@ function shuffle(array) {
     return array;
 };
 
+// Adding the shuffled cards to the html
 function addClass(array) {
 	$("li.card").children().removeClass();
 	for (var i = 0; i <= 15; i++) {
@@ -79,6 +80,7 @@ let stars = 3;
 let secs = 0;
 let minutes = 0;
 
+// Event listener fro when every card is clicked
 $("li.card").click(function() {
 	showCards($(this));
 	openCards($(this));
@@ -88,18 +90,22 @@ $("li.card").click(function() {
 	};
 });
 
+// Event listener to start the timer, for when the first card is clicked
 $("li.card").one("click", function() {
 	startTimer();
 })
 
+// show clicked card
 function showCards(elem) {
 	elem.addClass("open show");
 };
 
+// Save opened card
 function openCards(elem) {
 	open.push(elem.children().attr("class"));
 };
 
+// Check to see if opened cards match
 function cardsMatch(elem) {
 	if (open.length <= 2) {
 		if (open.length === 2) {
@@ -120,6 +126,7 @@ function cardsMatch(elem) {
 	};
 };
 
+// Increase the moves counter
 function counterUp() {
 	counter++
 	$(".moves").text(counter);
@@ -134,6 +141,8 @@ function counterUp() {
 	};
 };
 
+// Modal to be displayed when all cards match
+// from http://api.jqueryui.com/dialog/
 function gameOver() {
 	$(".dialog-text").text(function(){
 		if (stars === 1) {
@@ -155,6 +164,9 @@ function gameOver() {
     });
 };
 
+// the time counter function
+// https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval#Example
+// https://stackoverflow.com/questions/34278816/how-to-add-a-timer-in-html5-and-javascript
 function startTimer() {
 	let time = setInterval(function() {
 		secs++;
