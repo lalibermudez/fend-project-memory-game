@@ -137,9 +137,9 @@ function counterUp() {
 function gameOver() {
 	$(".dialog-text").text(function(){
 		if (stars === 1) {
-			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " star, and " + minutes + ":" + secs + " minutes.";
+			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " star, and " + minutes + ":" + secs + " minutes. Click OK to start a new game.";
 		} else {
-			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " stars, and " + minutes + ":" + secs + " minutes.";
+			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " stars, and " + minutes + ":" + secs + " minutes. Click OK to start a new game.";
 		};
 	});
     $( ".ui-dialog" ).dialog({
