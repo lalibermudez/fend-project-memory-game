@@ -83,7 +83,7 @@ let minutes = 0;
 // Event listener for when every card is clicked
 $("li.card").click(function() {
 	showCards($(this));
-	openCards($(this));
+	// openCards($(this));
 	cardsMatch();
 	if (match === 8) {
 		gameOver();
@@ -97,7 +97,13 @@ $("li.card").one("click", function() {
 
 // show clicked card
 function showCards(elem) {
-	elem.addClass("open show");
+	if (elem.hasClass("open") === false && elem.hasClass("show") === false) {
+		elem.addClass("open show");
+		openCards(elem);
+	} else {
+		elem.removeClass("open show");
+		open.pop();
+	};
 };
 
 // Save opened card
@@ -147,11 +153,11 @@ function counterUp() {
 // Modal to be displayed when all cards match
 // from http://api.jqueryui.com/dialog/
 function gameOver() {
-	$(".dialog-text").text(function(){
+	$(".dialog-text").html(function(){
 		if (stars === 1) {
-			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " star, and " + minutes + ":" + secs + " minutes. Click OK to start a new game.";
+			return "<p><b>CONGRATULATIONS</b> You won!</p> <div><b>Moves</b> " + counter + "</div><div><b>Rating </b> " + stars + " star</div><div><b>Time </b>" + minutes + ":" + secs + "</div><div><p>Click <b>OK</b> to start a new game.</p></div>";
 		} else {
-			return "CONGRATULATIONS!! You've won! With " + counter + " moves, " + stars + " stars, and " + minutes + ":" + secs + " minutes. Click OK to start a new game.";
+			return "<p><b>CONGRATULATIONS</b> You won!</p> <div><b>Moves</b> " + counter + "</div><div><b>Rating </b> " + stars + " stars</div><div><b>Time </b>" + minutes + ":" + secs + "</div><div><p>Click <b>OK</b> to start a new game.</p></div>";
 		};
 	});
     $( ".ui-dialog" ).dialog({
