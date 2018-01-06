@@ -135,9 +135,12 @@ function counterUp() {
 		$("ul.stars").children().eq(n).children().removeClass("fa-star").addClass("fa-star-o");
 		n--;
 		stars--;
-		if (stars < 0) {
-			stars = 0;
-		}
+		if (stars < 1) {
+			stars = 1;
+		};
+		if (n < 1) {
+			n = 1;
+		};
 	};
 };
 
@@ -183,10 +186,6 @@ function timerUp() {
 		minutes++;
 	}
 	$(".timer").children().text(minutes+":"+secs);
-	// if (match === 8) {
-	// 	clearInterval(time);
-	// return time;
-	// }
 };
 
 function stopTimer() {
