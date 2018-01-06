@@ -80,7 +80,7 @@ let stars = 3;
 let secs = 0;
 let minutes = 0;
 
-// Event listener fro when every card is clicked
+// Event listener for when every card is clicked
 $("li.card").click(function() {
 	showCards($(this));
 	openCards($(this));
@@ -117,7 +117,7 @@ function cardsMatch(elem) {
 				$("li.card.open").effect("shake").css({"background": "#f44242"});
 				window.setTimeout(function() {
 					$("li.card.open").removeClass("open show");
-				}, 500);
+				}, 600);
 			};
 			counterUp();
 			open.pop();
@@ -167,17 +167,30 @@ function gameOver() {
 // the time counter function
 // https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval#Example
 // https://stackoverflow.com/questions/34278816/how-to-add-a-timer-in-html5-and-javascript
+let time;
+
 function startTimer() {
-	let time = setInterval(function() {
-		secs++;
-		if (secs >= 60) {
-			secs = 0;
-			minutes++;
-		}
-		$(".timer").children().text(minutes+":"+secs);
-		if (match === 8) {
-			clearInterval(time);
-		return time;
-		}
+	stopTimer();
+	time = setInterval(function() {
+		timerUp();
 	}, 1000);
+};
+
+function timerUp() {
+	secs++;
+	if (secs >= 60) {
+		secs = 0;
+		minutes++;
+	}
+	$(".timer").children().text(minutes+":"+secs);
+	// if (match === 8) {
+	// 	clearInterval(time);
+	// return time;
+	// }
+};
+
+function stopTimer() {
+    if (time) {
+    	clearInterval(time);	
+    };
 };
