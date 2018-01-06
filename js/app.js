@@ -153,6 +153,7 @@ function counterUp() {
 // Modal to be displayed when all cards match
 // from http://api.jqueryui.com/dialog/
 function gameOver() {
+	stopTimer();
 	$(".dialog-text").html(function(){
 		if (stars === 1) {
 			return "<p><b>CONGRATULATIONS</b> You won!</p> <div><b>Moves</b> " + counter + "</div><div><b>Rating </b> " + stars + " star</div><div><b>Time </b>" + minutes + ":" + secs + "</div><div><p>Click <b>OK</b> to start a new game.</p></div>";
