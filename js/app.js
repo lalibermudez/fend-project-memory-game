@@ -100,15 +100,13 @@ function showCards(elem) {
 	if (elem.hasClass("open") === false && elem.hasClass("show") === false) {
 		elem.addClass("open show");
 		openCards(elem);
-	} else {
-		elem.removeClass("open show");
-		open.pop();
 	};
 };
 
 // Save opened card
 function openCards(elem) {
 	open.push(elem.children().attr("class"));
+	console.log(open);
 };
 
 // Check to see if opened cards match
